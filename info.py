@@ -14,7 +14,7 @@ def is_enabled(value, default):
 API_ID = int(environ['API_ID'])
 API_HASH = environ['API_HASH']
 BOT_TOKEN = environ['BOT_TOKEN']
-req_channel = int(environ.get('REQ_CHANNEL', "-1002170749878"))
+REQ_CHANNEL = int(environ.get('REQ_CHANNEL', "-1002170749878"))
 
 # Bot settings
 WEBHOOK = bool(environ.get("WEBHOOK", True)) # for web support on/off
