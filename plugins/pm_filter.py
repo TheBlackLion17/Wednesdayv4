@@ -104,12 +104,7 @@ async def pm_AutoFilter(client, msg, pmspoll=False):
         if 2 < len(message.text) < 100:
             search = message.text
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
-            if not files:
-                await client.send_message(REQ_CHANNEL, f"#REQUESTED_LOGS \n\n**MOVIE NAME :**`{search}` \n**REQUESTED BY :** {message.first_user.first_name}\n**USER ID :** {meesage.from_user.id}", replay_markup=InlineKeyboardMarkup([[InlineKeyboardButton("Mark as Done", callback_data="close_data")]]))
-                await asyncio.sleep(12)
-                await l.delete()    
-                if settings["spell_check"]:
-                    return await pm_spoll_choker(msg)
+            if not files:return await pm_spoll_choker(msg)
                 else:
                     return              
         else: return 
